@@ -1,0 +1,37 @@
+<body class="bg-dark-2">
+
+    <div class="tab-content">
+        <div class="tab-pane fade show active">
+            <div class="jumbotron pt-4 shadow-none bg-dark-2">
+                <div class="row">
+                    <div class="col">
+                        <div class="textfield-box mb-4">
+                            <label class="text-white mb-1">Interval time (seconds)</label>
+                            <input onkeyup="set_interval_time(this.value)" type="number" class="text-white form-control" placeholder="60" value="60">
+                        </div>
+                        <div class="textfield-box mb-4">
+                            <label class="text-white mb-1">Minimum difference</label>
+                            <input onkeyup="set_min_difference(this.value)" type="number" class="text-white form-control" placeholder="10" value="10">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label class="text-white mb-1">Minimum brightness <span id="minimum-brightness-marker">0</span></label>
+                        <input type="range" class="text-white form-control-range" min="0" max="100" value="0" oninput="set_minimum_brightness(this.value)">
+                    </div>
+                    <div class="col">
+                        <label class="text-white mb-1">Maximum brightness <span id="maximum-brightness-marker">100</span></label>
+                        <input type="range" class="text-white form-control-range" min="0" max="100" value="100" oninput="set_maximum_brightness(this.value)">
+                    </div>
+                </div>
+                <hr class="border-white my-4">
+                <button id="start-button" class="btn btn-info" onclick='toggle_interval()'>
+                    <span id="start-marker">Start</span> 
+                    (<span id="interval-marker">60</span>)
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
