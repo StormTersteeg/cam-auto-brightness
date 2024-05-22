@@ -14,7 +14,7 @@ I created this project because I wanted to see if this concept would work, and i
 
 ### Prerequisites
 
-- Windows 10 or later (can be built on other platforms too)
+- Windows 10 or later
 - Webcam (built-in or external)
 
 ### Usage
