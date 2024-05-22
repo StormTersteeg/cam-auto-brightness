@@ -1,6 +1,6 @@
 # CaB - Cam Auto Brightness
 
-![image](https://github.com/StormTersteeg/cam-auto-brightness/assets/42808385/bc93a81d-801d-4257-8223-573763dfba50)
+![image](https://github.com/StormTersteeg/cam-auto-brightness/assets/42808385/acb6f62b-35fd-489d-9c09-8359bf73cc4b)
 
 CaB (Cam Auto Brightness) is a desktop application that dynamically adjusts your laptop's display brightness based on the ambient light detected by your webcam.
 I created this project because I wanted to see if this concept would work, and it does, but I wouldn't call it a great solution.
