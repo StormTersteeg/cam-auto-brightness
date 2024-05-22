@@ -5,6 +5,7 @@ var interval_step = 0
 var maximum_brightness = 100
 var minimum_brightness = 0
 var minimum_difference = 10
+var brightness_offset = 0
 
 function toggle_interval() {
   document.getElementById("start-marker").innerHTML = interval ? 'Start' : 'Stop'
@@ -43,10 +44,17 @@ function set_minimum_difference(val) {
   }
 }
 
+function set_brightness_offset(val) {
+  if (val > -101 && val < 101) {
+    brightness_offset = parseInt(val)
+    document.getElementById('brightness-offset-marker').innerHTML = val
+  }
+}
+
 setInterval(async () => {
   if (interval) {    
     if (interval_step >= interval_time) {
-      pywebview.api.adjust_brightness(maximum_brightness, minimum_brightness, minimum_difference)
+      pywebview.api.adjust_brightness(maximum_brightness, minimum_brightness, minimum_difference, brightness_offset)
       interval_step = 0
     } else {
       interval_step++

@@ -13,6 +13,7 @@ def is_webcam_in_use():
 
 def capture_image():
     cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+    
     if not cap.isOpened():
         print("Cannot open webcam")
 
@@ -50,7 +51,7 @@ class Api:
         window.destroy()
         os._exit(0)
 
-    def adjust_brightness(self, maximum_brightness, minimum_brightness, minimum_difference):
+    def adjust_brightness(self, maximum_brightness, minimum_brightness, minimum_difference, brightness_offset):
         if not is_webcam_in_use():
             try:
                 image = capture_image()
@@ -58,6 +59,7 @@ class Api:
 
                 # Normalize and adjust brightness with minimal difference check
                 brightness_level = np.clip((brightness / 255) * 100, 0, 100)
+                brightness_level += brightness_offset
                 
                 if brightness_level > maximum_brightness:
                     brightness_level = maximum_brightness
